@@ -1,0 +1,30 @@
+{% extends 'addlocation.html' %}
+{% block contents %}
+<br>
+<a href="{% url 'userhome' %}"><p>back</p></a>
+<h1>Total Counts</h1>
+<br><br>
+<table border="5" style="color: bisque;" align="center"><tr>
+    <th style="width: 8cm;">Total locations</th>
+    <th style="width: 8cm;">Total turfs</th>
+    <th style="width: 8cm;">Total registered users</th>
+    <th style="width: 8cm;">Total managers</th>
+    <th style="width: 8cm;">Total bookings</th>
+    
+</tr>
+
+    <tr style="text-align: center;">
+        <td>{{turfs}}</td>
+        
+        <td>{{locations}}</td>
+        <td>{{register}}</td>
+        <td>{{manager}}</td>
+        <td>{{checkout}}</td>
+        
+       
+    </tr>
+    
+
+
+</table>
+{% endblock %}

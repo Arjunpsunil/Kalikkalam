@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+{% endblock %}
+{% block home %}
+
+
+</header>
+<div>
+<div class="hero overlay"  style="background-image: url({% static 'app_static/images/turf.jpg' %});">
+  <div class="container">
+    <div class="row align-items-center">
+      <br><br><br><br>
+      <div>
+        <h1 style="margin-top: 2cm;color: rgb(248, 248, 248);">Turfs</h1>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+       
+      </div>
+      <div class="container" style="height:10cm;overflow-y: scroll;">
+      <div class="row no-gutters">
+        {% for i in data %}
+        <div class="col-md-4">
+          <div class="post-entry">
+            <a href="{% url 'singleturf' id=i.id  %}">
+              <img src="{{i.image.url}}" alt="Image" class="img-fluid" style="height: 7cm;">
+            </a>
+            <div class="caption">
+              <div class="caption-inner">
+                <h3 class="mb-3">{{i.name}}&nbsp;&nbsp;&nbsp;<span style="font-size:0.5cm;">{{i.locationid.name}}</span></h3>
+                
+                <div class="author d-flex align-items-center"><br>
+                    
+                
+                 
+                
+                   
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+       
+        
+      </div>
+
+    </div>
+   
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

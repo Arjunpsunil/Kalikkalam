@@ -1,0 +1,28 @@
+{% extends 'addlocation.html' %}
+{% block contents %}
+<br>
+<a href="{% url 'userhome' %}"><p>back</p></a>
+<h1>Manager table</h1>
+<br><br>
+<table border="5" style="color: bisque;" align="center"><tr>
+    <th style="width: 8cm;">Name</th>
+    <th style="width: 8cm;">email</th>
+    <th style="width: 8cm;">Phone number</th>
+    <th style="width: 8cm;">password</th>
+    <th>Approving tab</th>
+    
+</tr>
+{% for i in data %}
+    <tr style="text-align: center;">
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.number}}</td>
+        <td>{{i.password}}</td>
+        <td><a href="{% url 'man' id=i.id %}"><input type="button" value="Approve" ></a>&nbsp;&nbsp;&nbsp;<a href="{% url 'mandel' id=i.id %}"><button>Decline</button></a></td>
+       
+    </tr>
+    {% endfor %}
+
+
+</table>
+{% endblock %}

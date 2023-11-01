@@ -1,0 +1,28 @@
+{% extends 'addlocation.html' %}
+{% block contents %}
+<br>
+<a href="{% url 'userhome' %}"><p>back</p></a>
+<h1>Turf table</h1>
+<br><br>
+<table border="5" style="color: bisque;" align="center"><tr>
+    <th style="width: 8cm;">Turf Name</th>
+    <th style="width: 8cm;">Image</th>
+    <th style="width: 8cm;">Description</th>
+    <th style="width: 8cm;">Price</th>
+    <th style="width: 8cm;">Location</th>
+    
+</tr>
+{% for i in data %}
+    <tr style="text-align: center;">
+        <td>{{i.name}}</td>
+        <td><img src="{{i.image.url}}" alt="" style="height: 5cm;"></td>
+        <td>{{i.description}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.locationid.name}}</td>
+       
+    </tr>
+    {% endfor %}
+
+
+</table>
+{% endblock %}

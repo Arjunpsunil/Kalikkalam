@@ -1,0 +1,24 @@
+{% extends 'addlocation.html' %}
+{% block contents %}
+<br>
+<a href="{% url 'userhome' %}"><p>back</p></a>
+<h1>Register table</h1>
+<br><br>
+<table border="5" style="color: bisque;" align="center"><tr>
+    <th style="width: 8cm;">Name</th>
+    <th style="width: 8cm;">email</th>
+    <th style="width: 8cm;">password</th>
+    
+</tr>
+{% for i in data %}
+    <tr style="text-align: center;">
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.password}}</td>
+       
+    </tr>
+    {% endfor %}
+
+
+</table>
+{% endblock %}

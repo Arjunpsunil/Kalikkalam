@@ -1,0 +1,68 @@
+{% extends 'managerbase.html' %}
+{% load static %}
+{% block contents %}
+{% block home %}
+
+
+<div>
+<div style="background-size:cover;background-image: url({% static 'app_static/images/manager.jpg' %});">
+  <div class="container" style="">
+    <div class="row align-items-center">
+      <br><br><br><br>
+      <div>
+        <h1 style="margin-top: 2cm;color: rgb(248, 248, 248);">Bookings</h1>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-12 title-section">
+          <h2 class="heading">Latest</h2>
+        </div>
+      </div>
+      <div class="container" >
+      <div class="row no-gutters">
+        <table border="5" style="background-color: rgba(0, 0, 0, 0.347);"><tr>
+          <th style="width: 8cm;">User id</th>
+          <th style="width: 8cm;">Name</th>
+          <th style="width: 8cm;">Email</th>
+          <th style="width: 8cm;">Number</th>
+          <th style="width: 8cm;">Comments</th>
+          <th style="width: 8cm;">Date</th>
+          <th style="width: 8cm;">Time</th>
+          <th style="width: 8cm;">Turf name</th>
+          <th style="width: 8cm;">Approve/Decline</th>
+          
+      </tr>
+      {% for i in data %}
+          <tr style="text-align: center;">
+              
+              <td>{{i.userid.name}}</td>
+              <td>{{i.name}}</td>
+              <td>{{i.userid.email}}</td>
+              <td>{{i.number}}</td>
+              <td>{{i.comments}}</td>
+              <td>{{i.date}}</td>
+              <td>{{i.time}}</td>
+              <td>{{i.turfid.name}}</td>
+              <td><a href="{% url 'bookapprove' id=i.id %}" class="btn btn-primary py-3 px-4 mr-3">Approve</a><br> <br><a href="{% url 'delbook' id=i.id %}" class="btn btn-primary py-3 px-4 mr-3">Decline</a></td>
+          </tr>
+          {% endfor %}
+      
+      
+      </table>
+        </div>
+      </div>
+       
+        
+      </div>
+
+    </div>
+   
+      
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% endblock %}

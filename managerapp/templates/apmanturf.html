@@ -1,0 +1,91 @@
+{% extends 'managerbase.html' %}
+{% load static %}
+{% block contents %}
+{% block home %}
+
+</header>
+<div>
+<div class="hero overlay"  style="background-image: url({% static 'app_static/images/manager.jpg' %});">
+  <div class="container" style="contain: layout;">
+    <div class="row align-items-center">
+      <br><br><br><br>
+      <div>
+        <h1 style="margin-top: 2cm;color: rgb(248, 248, 248);">Approved Turfs</h1>
+    </div>
+    <br>
+
+
+<br><br>
+<table border="5" style="color: rgb(247, 246, 244);background-color: rgba(250, 235, 215, 0.307);" align="center" ><tr>
+    <th style="width: 8cm;">Turf Name</th>
+    <th style="width: 8cm;">Image</th>
+    <th style="width: 8cm;">Description</th>
+    <th style="width: 8cm;">Price</th>
+    <th style="width: 8cm;">Location</th>
+    
+    
+</tr>
+{% for i in data %}
+    <tr style="text-align: center;">
+        <td style="color: rgb(0, 8, 8);font-size: 1cm;">{{i.name}}</td>
+        <td><img src="{{i.image.url}}" alt="" style="height: 5cm;"></td>
+        <td style="color: rgb(0, 8, 8);">{{i.description}}</td>
+        <td style="color: rgb(247, 252, 252);font-size: 1cm;">{{i.price}}</td>
+        <td style="color: rgb(246, 252, 252);font-size: 1cm;">{{i.locationid.name}}</td>
+       
+       
+    </tr>
+    {% endfor %}
+
+
+</table>
+<div>
+    <h1 style="margin-top: 2cm;color: rgb(248, 248, 248);">Decilned Turfs</h1>
+</div>
+<br>
+
+
+<br><br>
+<table border="5" style="color: rgb(247, 246, 244);background-color: rgba(250, 235, 215, 0.307);" align="center" ><tr>
+<th style="width: 8cm;">Turf Name</th>
+<th style="width: 8cm;">Image</th>
+<th style="width: 8cm;">Description</th>
+<th style="width: 8cm;">Price</th>
+<th style="width: 8cm;">Location</th>
+
+
+</tr>
+{% for i in data1 %}
+<tr style="text-align: center;">
+    <td style="color: rgb(0, 8, 8);font-size: 1cm;">{{i.name}}</td>
+    <td><img src="{{i.image.url}}" alt="" style="height: 5cm;"></td>
+    <td style="color: rgb(0, 8, 8);">{{i.description}}</td>
+    <td style="color: rgb(247, 252, 252);font-size: 1cm;">{{i.price}}</td>
+    <td style="color: rgb(246, 252, 252);font-size: 1cm;">{{i.locationid.name}}</td>
+   
+   
+</tr>
+{% endfor %}
+
+
+</table>
+    
+    <div class="container">
+      <div class="row">
+       
+      </div>
+      
+       
+        
+      </div>
+
+    </div>
+   
+      
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% endblock %}

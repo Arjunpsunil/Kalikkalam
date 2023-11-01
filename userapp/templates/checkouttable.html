@@ -1,0 +1,34 @@
+{% extends 'addlocation.html' %}
+{% block contents %}
+<br>
+<a href="{% url 'userhome' %}"><p>back</p></a>
+<h1>Checkout table</h1>
+<br><br>
+<table border="5" style="color: bisque;" align="center"><tr>
+    <th style="width: 8cm;">User</th>
+    <th style="width: 8cm;">Name</th>
+    <th style="width: 8cm;">email</th>
+    <th style="width: 8cm;">Phone number</th>
+    <th style="width: 8cm;">Comments</th>
+    <th style="width: 8cm;">Date</th>
+    <th style="width: 8cm;">Time</th>
+    <th style="width: 8cm;">Turf</th>
+    
+</tr>
+{% for i in data %}
+    <tr style="text-align: center;">
+        <td>{{i.userid.name}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.userid.email}}</td>
+        <td>{{i.number}}</td>
+        <td>{{i.comments}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.time}}</td>
+        <td>{{i.turfid.name}}</td>
+       
+    </tr>
+    {% endfor %}
+
+
+</table>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block home %}
+    
+   {% block contents %}
+   {% block logout %}
+{% endblock %} 
+    <br><br>
+    <div class="site-section bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="widget-next-match">
+              <div class="widget-title">
+                <h3 align="center">Login</h3>
+              </div>
+              <div class="widget-body mb-3">
+                <div class="widget-vs">
+                  <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                    <form action="{% url 'logindata' %}" method="post"  style="margin-top: 50px;;">
+                      {% csrf_token %}
+                        <div class="form-group" style="width: 7cm;">
+                          <input type="text" class="form-control" placeholder="Name" name="name">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control" placeholder="password" name="password">
+                        </div>
+                        <div class="form-group" align="center">
+                          <input type="submit" class="btn btn-primary py-3 px-5" value="Login" >
+                        </div>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- .site-section -->
+
+
+
+  {% endblock %}
+
+{% endblock %}

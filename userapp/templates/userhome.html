@@ -1,0 +1,14 @@
+{% extends 'addlocation.html' %}
+{% block contents %}
+<a href="{% url 'home' %}"><h1>Home</h1></a>
+<a href="{% url 'addlocation' %}"><h1>Add Location</h1></a>
+<a href="{% url 'addturf' %}"><h1>Add Turf</h1></a>
+<a href="{% url 'locationtable' %}"><h1>Location Table</h1></a>
+<a href="{% url 'turftable' %}"><h1>Turf table</h1></a>
+<a href="{% url 'registertable' %}"><h1>Register Table</h1></a>
+<a href="{% url 'contacttable' %}"><h1>Contact table</h1></a>
+<a href="{% url 'checkouttable' %}"><h1>Checkout Table</h1></a>
+<a href="{% url 'mantable' %}"><h1>Manager Table</h1></a>
+<a href="{% url 'approvedman' %}"><h1>Approved Manager Table</h1></a>
+<a href="{% url 'counttable' %}"><h1>Count Table</h1></a>
+{% endblock %}

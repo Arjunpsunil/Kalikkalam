@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+{% block footer %}
+{% endblock %}
+
+{% block home %}
+<h1 style="margin: 5cm;text-align: center;font-family:fantasy;word-spacing: 1cm;">!!!!! Your order has been placed successfull !!!!!</h1>
+<h1 style="text-align: center;">Order History</h1>
+
+<br><div class="container" style="height:15cm;overflow-y: scroll;">
+    <div class="row no-gutters">
+      {% for i in data_1 %}
+      <div class="col-md-4">
+        <div class="post-entry">
+          <a href="">
+            <img src="{{i.turfid.image.url}}" alt="Image" class="img-fluid" style="height: 7cm;">
+          </a>
+          <div class="caption">
+            <div class="caption-inner">
+              <h3 class="mb-3" style="font-size: 0.5cm;">{{i.name}}</h3><h3 class="mb-3" style="font-size: 0.5cm;">Turf: {{i.turfid.name}}</h3>
+              <h3 class="mb-3" style="font-size: 0.5cm;">Date: {{i.date}}</h3><h3 class="mb-3" style="font-size: 0.5cm;">Time: {{i.time}}</h3>
+              {% if i.status == 0 %}
+              <h3 class="mb-3" style="font-size: 0.5cm;">Order status : waiting for approval</h3>
+              {% elif i.status == 1 %}
+              <h3 class="mb-3" style="font-size: 0.5cm;">Order status : Approved</h3>
+              {% else %}
+              <h3 class="mb-3" style="font-size: 0.5cm;">Order status : Declined</h3>
+              {% endif %}
+              <div class="author d-flex align-items-center"><br>
+                  
+              
+               
+              
+                 
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+{% endblock %}
+{% endblock %}
