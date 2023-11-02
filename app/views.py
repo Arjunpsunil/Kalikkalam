@@ -5,6 +5,7 @@ import stripe
 from django.conf import settings
 stripe.api_key=settings.STRIPE_SECRET_KEY
 
+
 def base(request):
     return render(request,'base.html')
 def home(request):
@@ -126,12 +127,14 @@ def success(request):
     turfid = request.session.get('turfs_id')
     data=Checkout(name=user_name,number=user_number,comments=user_comments,date=user_date,time=user_time,userid=Register.objects.get(id=userid),turfid=Turf.objects.get(id=turfid))
     data.save()
-    data_1=Checkout.objects.filter(userid=userid)
-    return render(request,'success.html',{'data_1':data_1})
+    data_1=Checkout.objects.filter(userid=userid).order_by('-id')
+    response = render(request, 'success.html', {'data_1': data_1})
+    response.set_cookie('redirect_delay', '3')
+    return response
 
 def myorders(request):
      userid=request.session.get('ui_id')
-     data=Checkout.objects.filter(userid=userid)
+     data=Checkout.objects.filter(userid=userid).order_by('-id')
      return render(request,'myorders.html',{'data':data})
     
         

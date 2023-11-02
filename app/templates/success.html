@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block home %}
+
 <h1 style="margin: 5cm;text-align: center;font-family:fantasy;word-spacing: 1cm;">!!!!! Your order has been placed successfull !!!!!</h1>
 <h1 style="text-align: center;">Order History</h1>
 
@@ -41,6 +42,34 @@
         {% endfor %}
       </div>
     </div>
+    <p>Redirecting in <span id="countdown">3</span> seconds...</p>
+
 
 {% endblock %}
 {% endblock %}
+
+{% block js %}
+
+    <script>
+        // Function to update the countdown
+        function updateCountdown() {
+            var countdownElement = document.getElementById('countdown');
+            var countdownValue = parseInt(countdownElement.innerText, 10);
+            if (countdownValue > 1) {
+                countdownElement.innerText = countdownValue - 1;
+                setTimeout(updateCountdown, 1000);
+            } else {
+                window.location.href = '{% url "home" %}';  // Replace with your desired redirect URL
+            }
+        }
+
+        // Start the countdown
+        setTimeout(updateCountdown, 1000);
+    </script>
+{% endblock %}
+
+
+
+
+
+
