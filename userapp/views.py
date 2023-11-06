@@ -30,7 +30,7 @@ def turf(request):
         manager=request.POST['manager']
         data=Turf(name=name,image=image,description=description,price=price,locationid=Location.objects.get(id=location),managerid=Managerdata.objects.get(id=manager))
         data.save()
-    return redirect('addturf')
+    return redirect('turftable')
 def turftable(request):
     data=Turf.objects.all()
     return render(request,'turftable.html',{'data':data})

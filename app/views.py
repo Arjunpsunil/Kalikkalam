@@ -108,7 +108,7 @@ def checkoutdata(request):
                     'quantity':1,
             }],
             mode='payment',
-            success_url = "http://127.0.0.1:8000/appsuccess",
+            success_url = "http://127.0.0.1:8000/success",
             cancel_url = "http://127.0.0.1:8000/pay_cancel",
             # client_reference_id=product_id,
         )
