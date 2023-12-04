@@ -26,7 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('userapp',include('userapp.urls')),
     path('',include('app.urls')),
-    path('managerapp/',include('managerapp.urls'))
+    path('managerapp/',include('managerapp.urls')),
+    path('restapp',include('restapp.urls'))
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,
